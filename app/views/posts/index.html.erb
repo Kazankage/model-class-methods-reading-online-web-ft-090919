@@ -1,6 +1,5 @@
-<% if !params[:author].blank? %>
-  <% @posts = Post.where(author: params[:author]) %>
-<% end %>
+<%= form_tag("/posts", method: "get") do %>
+  <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name"), include_blank: true %>
 <!-- new code ends here -->
  
 
